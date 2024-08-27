@@ -1,0 +1,62 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Main
+{
+   /**
+      The ArrayList returned by this method should contain all the
+      entries from the input list but with all the 0 numbers from
+      the input list coming first, followed by the all the negative
+      numbers from the input list, followed by all the positive numbers.
+
+      Write this method using an enhanced for-loop.
+
+      Hint: Use three temporary list objects and then
+      combine them together using the addAll() method.
+   */
+   public static ArrayList<Integer> split(ArrayList<Integer> list)
+   {
+      ArrayList<Integer> result = new ArrayList<>();
+      ArrayList<Integer> result1 = new ArrayList<>();
+      ArrayList<Integer> result2 = new ArrayList<>();
+      ArrayList<Integer> result3 = new ArrayList<>();
+      
+      for (int number : list){
+       if (number == 0)
+       result1.add(number);
+      }
+      for (int number : list){
+      if (number < 0)
+         result2.add(number);
+      }
+      for (int number : list){
+      if (number > 0)
+         result3.add(number);
+      }
+      result.addAll(0, result1);
+      result.addAll(result.size(), result2);
+      result.addAll(result.size(), result3);
+      //System.out.println(result);
+      return result;
+   }
+
+
+
+   public static void main(String[] args)
+   {
+      ArrayList<Integer> list1 = new ArrayList<>(Arrays.asList(0,-1,0,-2,0,3,0,-4,0));
+      ArrayList<Integer> list2 = new ArrayList<>(Arrays.asList(5,-6,0));
+      ArrayList<Integer> list3 = new ArrayList<>(Arrays.asList(-5,0,3,0,-2,1,-1));
+      ArrayList<Integer> list4 = new ArrayList<>(Arrays.asList(3,-4,-5,0,6,-7,8,9,-10,0));
+
+      ArrayList<Integer> list1a = split(list1);
+      ArrayList<Integer> list2a = split(list2);
+      ArrayList<Integer> list3a = split(list3);
+      ArrayList<Integer> list4a = split(list4);
+
+      System.out.println(list1 + "   " + list1a);
+      System.out.println(list2 + "   " + list2a);
+      System.out.println(list3 + "   " + list3a);
+      System.out.println(list4 + "   " + list4a);
+   }
+}
