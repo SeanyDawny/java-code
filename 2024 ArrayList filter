@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class ArrayList_problem_1
+{
+   /**
+      The ArrayList returned by this method should contain those
+      entries from the input list that are strictly greater than
+      the input integer n. The input list should not be changed.
+
+      Write this method using an enhanced for-loop.
+   */
+   public static ArrayList<Integer> filter(int n, ArrayList<Integer> list)
+   {
+      ArrayList<Integer> result = new ArrayList<>();
+      
+      for (int number: list){
+       if (number > n){
+       result.add(number);
+   }
+
+      }
+      //System.out.println(result);
+      return result;
+   }
+   public static void main(String[] args)
+   {
+      ArrayList<Integer> list1 = new ArrayList<>(Arrays.asList(1,2,3,4));
+      ArrayList<Integer> list2 = new ArrayList<>(Arrays.asList(5,6));
+      ArrayList<Integer> list3 = new ArrayList<>(Arrays.asList(5,4,3,2,1));
+      ArrayList<Integer> list4 = new ArrayList<>(Arrays.asList(3,4,5,6,7,8,9,10));
+
+      ArrayList<Integer> list1a = filter(1, list1);
+      ArrayList<Integer> list2a = filter(6, list2);
+      ArrayList<Integer> list3a = filter(3, list3);
+      ArrayList<Integer> list4a = filter(1, list4);
+
+      System.out.println(list1 + "   " + list1a);
+      System.out.println(list2 + "   " + list2a);
+      System.out.println(list3 + "   " + list3a);
+      System.out.println(list4 + "   " + list4a);
+   }
+}
