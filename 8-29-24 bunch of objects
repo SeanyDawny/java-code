@@ -1,0 +1,152 @@
+/**
+   This class represents pairs of integers.
+*/
+public class Pair {
+   private int x;
+   private int y;
+
+   // Default constructor
+   public Pair() {
+      this.x = 0;
+      this.y = 0;
+   }
+
+   /**
+      Create a Pair object with the given values.
+
+      @param x  x-value for the new Pair object
+      @param y  y-value for the new Pair object
+   */
+   public Pair(int x, int y) {
+      this.x = x;
+      this.y = y;
+   }
+
+   /**
+      Create a Pair object with the given value
+      as both its x and y values.
+
+      @param v  value for both numbers in the new Pair object
+   */
+   public Pair(int v) {
+      this.x = v;
+      this.y = v;
+   }
+
+   /**
+      Create a Pair object with the same values
+      as the given Pair object.
+
+      @param p  Pair object whose values should be copied
+   */
+   public Pair(Pair p) {
+      this.x = p.x;
+      this.y = p.y;
+   }
+
+   /**
+      Get the x-value of this Pair object.
+
+      @return this Pair's x-value
+   */
+   public int getX() {
+      return x;
+   }
+
+   /**
+      Change this Pair object to have the given x-value.
+
+      @param x  new x-value for this Pair object
+   */
+   public void setX(int x) {
+      this.x = x;
+   }
+
+   /**
+      Change this Pair object to have the same x-value
+      as the given Pair.
+
+      @param p  Pair object whose x-value should be copied
+   */
+   public void setX(Pair p) {
+      this.x = p.x;
+   }
+
+   /**
+      Get the y-value of this Pair object.
+
+      @return this Pair's y-value
+   */
+   public int getY() {
+      return y;
+   }
+
+   /**
+      Change this Pair object to have the given y-value.
+
+      @param y  new y-value for this Pair object
+   */
+   public void setY(int y) {
+      this.y = y;
+   }
+
+   /**
+      Change this Pair object to have the same y-value
+      as the given Pair.
+
+      @param p  Pair object whose y-value should be copied
+   */
+   public void setY(Pair p) {
+      this.y = p.y;
+   }
+
+   /**
+      Change this Pair object to have the same x-value
+      and y-value as the given Pair.
+
+      @param p  Pair object whose x-value and y-value should be copied
+   */
+   public void set(Pair p) {
+      this.x = p.x;
+      this.y = p.y;
+   }
+
+   /**
+      Create a new Pair object that contains the swapped x-value
+      and y-value from this Pair object.
+
+      @return a new Pair that has the swapped values from this Pair
+   */
+   public Pair swap() {
+      return new Pair(this.y, this.x);
+   }
+
+   /**
+      Determine if this Pair object has the same x-value
+      and the same y-value as the given Pair.
+
+      @param p  a reference to a second Pair object
+      @return true if the given Pair is equal to this Pair
+   */
+   public boolean equals(Pair p) {
+      return this.x == p.x && this.y == p.y;
+   }
+
+   /**
+      Determine if the two numbers in this Pair object are the
+      same two numbers that are in the given Pair without
+      regard for the order of the numbers. So (2,3) and (3,2)
+      would have "equal numbers".
+
+      @param p  a reference to a second Pair object
+      @return true if this Pair and the other Pair contain the same two numbers
+   */
+   public boolean equalNumbers(Pair p) {
+      return (this.x == p.x && this.y == p.y) || (this.x == p.y && this.y == p.x);
+   }
+
+   @Override
+   public String toString() {
+      return "Pair: (" + x + ", " + y + ")";
+   }
+}
