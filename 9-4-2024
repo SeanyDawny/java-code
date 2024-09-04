@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main()
+{
+    char *literal = "Hello";
+    char arrayStr[] = "Hello";
+    printf("String literal: %s\n", literal);
+    printf("Array string: %s\n", arrayStr);
+    printf("String literals can't be changed because string literals are stored at a read-only memory section\n");
+    literal[0] = 'J'; //Doesn't do shit after it errors out here
+    printf("Array string: %s\n", literal);
+    arrayStr[0] = 'J';
+    printf("Array string: %s", arrayStr);
+    return 0;
+}
